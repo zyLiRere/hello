@@ -76,7 +76,9 @@
 	- BiLingual Evaluation Understudy, IBM
 	- 将机器翻译产生的候选译文与人翻译的多个参考译文相比较，越接近，候选译文的正确率越高。
 	- 统计同时出现在系统译文和参考译文中的n元词的个数，最后把匹配到的n元词的数目除以系统译文的n元词数目，得到评测结果。
-	- $$B L E U=B P \times \exp \left(\sum_{n=1}^{N} \mathcal{w}_{n} \log p_{n}\right)$$
+$$
+B L E U=B P \times \exp \left(\sum_{n=1}^{N} \mathcal{w}_{n} \log p_{n}\right)
+$$
 	- 其中$B P$为长度过短句子的惩罚因子；$N$为最大语法的阶数，实际取4；$\mathcal{w}_n=1/N$；$p_n$表示出现在答案译文中的$n$元词语接续组占候选译文中$n$元词语接续组总数的比例。
 	- $$\mathrm{BP}= \begin{cases}1 & \text { if } c>r \\ e^{(1-r / c)} & \text { if } c \leq r\end{cases}$$
 	- 其中$c$为候选译文中单词的个数，$r$为答案译文中与$c$最接近的译文单词个数。
